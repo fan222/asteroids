@@ -57,8 +57,8 @@ Function.prototype.curry = function(numArgs){
     console.log(numbers);
     if (numbers.length === numArgs){
       // console.log(this); // this is global
-      return that.apply(this, numbers);
-      // return this(...numbers) ???
+      return that.apply(undefined, numbers);
+      return that.bind(this)(...numbers);
       // return sumThree(...numbers)
     } else {
       return _curry;
